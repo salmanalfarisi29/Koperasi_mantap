@@ -20,9 +20,7 @@ class ProductController extends Controller
     {
         $products = Product::all();
         Log::info('User mengakses indeks produk', ['user' => Auth::user()->id]);
-        return view('products.index', [
-            'products' => $products
-        ]);
+        return view('products.index', compact('products'));
     }
 
     /**
