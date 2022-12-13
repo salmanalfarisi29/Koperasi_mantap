@@ -26,6 +26,7 @@
     <table class="table table-5m" >
 
         <table class="table table-striped table-bordered " style="border:1;">
+        <table width="300px">
             <thead>
                 <tr>
                     <th scope="col">No.</th>

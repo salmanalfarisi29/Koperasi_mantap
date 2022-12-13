@@ -34,3 +34,4 @@ Route::resource('users', \App\Http\Controllers\UserController::class)
 Route::resource('products', \App\Http\Controllers\ProductController::class)
     ->middleware('auth');
 Route::get('reportStock', [ReportController::class, 'downloadPDF']);
+Route::get('kirim-email','App\Http\Controllers\MailController@index');
