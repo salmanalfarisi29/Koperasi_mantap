@@ -12,12 +12,12 @@ class ReportController extends Controller
     public function downloadPDF(){
         $product = Product::all();
         $data = [
-            'title' => 'Laporan Stok Terkini',
+            'title' => 'Report Barang Terupdate',
             'date' => date('d/m/Y'),
             'product' => $product
         ];
         $pdf = PDF::loadView('productspdf', $data);
-        return $pdf->download('Laporan stock.pdf');
+        return $pdf->download('Report Barang.pdf');
     }
 
 
