@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +35,4 @@ Route::resource('users', \App\Http\Controllers\UserController::class)
 Route::resource('products', \App\Http\Controllers\ProductController::class)
     ->middleware('auth');
 Route::get('reportStock', [ReportController::class, 'downloadPDF']);
-Route::get('kirim-email','App\Http\Controllers\MailController@index');
+Route::get('kirim-email','App\Http\Controllers\MailController@enqueue');

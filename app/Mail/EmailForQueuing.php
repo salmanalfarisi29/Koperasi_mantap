@@ -5,25 +5,23 @@ namespace App\Mail;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Content;
+use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\Log;
 
-class MyTestMail extends Mailable
+class EmailForQueuing extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $details;
-  
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($details)
+    public function __construct()
     {
-        $this->details = $details;
+        //
     }
-  
     /**
      * Build the message.
      *
@@ -31,8 +29,8 @@ class MyTestMail extends Mailable
      */
     public function build()
     {
-        Log::info('User mengakses Mail kirim email');
-        return $this->subject('Mail from Koperasi Mantap')
-                    ->view('emails.myTestMail');
+        return $this->from('Koperasi-Mantap@mail.com', 'Koperasi-Mantap')
+            ->subject('Attention!!!')
+            ->view('emails.myTestMail');
     }
 }
