@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class BarangSeeder extends Seeder
 {
@@ -21,11 +22,11 @@ class BarangSeeder extends Seeder
     	for($i = 1; $i <= 2000; $i++){
 
         \DB::table('products')->insert([
-            'code' => $faker->unique()->text(13),
+            'code' => IdGenerator::generate(['table' => 'products', 'field'=>'code', 'length' => 8, 'prefix' => 'M']),
         	'product_name' => $faker->foodName(),
         	'quantity' => $faker->numberBetween(5,100),
         	'price' => $faker->numberBetween(500,100000)
         ]);
     }
-}
+    }
 }
