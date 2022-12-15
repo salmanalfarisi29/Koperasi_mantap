@@ -23,10 +23,10 @@ class Product extends Model
     ];
    
     public function getActivitylogOptions(): LogOptions
-{
+    {
     return LogOptions::defaults();
-}
+    }
 
     protected static $logName = 'barang';
-    protected static $logFillable = true;
+
 }
