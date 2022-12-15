@@ -29,7 +29,7 @@
                                 <td>{{$product->code}}</td>
                                 <td>{{$product->product_name}}</td>
                                 <td>{{$product->quantity}}</td>
-                                <td>{{$product->price}}</td>
+                                <td>Rp {{$product->price}},00</td>
                                 <td>
                                     <a href="{{route('products.edit', $product)}}" class="btn btn-primary btn-xs">
                                         Edit
