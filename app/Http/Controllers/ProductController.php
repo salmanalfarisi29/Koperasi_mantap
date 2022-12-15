@@ -45,7 +45,7 @@ class ProductController extends Controller
         try{
         Log::warning('User mencoba menambahkan data produk', ['user' => Auth::user()->id, 'data' => $request]);
         $request->validate([
-                'code' => 'required | min:13 | max:13',
+                'code' => 'required',
                 'product_name'=> 'required',
                 'quantity' => 'required',
                 'price' => 'required'
