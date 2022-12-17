@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ReportController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,22 +18,22 @@ use App\Http\Controllers\MailController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
 
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', function() {
-    return view('home');
+Route::get('/home', function () {
+  return view('home');
 })->name('home')->middleware('auth');
 
 Route::resource('users', \App\Http\Controllers\UserController::class)
-    ->middleware('auth');
+  ->middleware('auth');
 Route::resource('products', \App\Http\Controllers\ProductController::class)
-    ->middleware('auth');
+  ->middleware('auth');
 Route::get('reportStock', [ReportController::class, 'downloadPDF']);
-Route::get('kirim-email','App\Http\Controllers\MailController@enqueue');
+Route::get('kirim-email', 'App\Http\Controllers\MailController@enqueue');

@@ -42,23 +42,23 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        try{
-        Log::warning('User mencoba menambahkan data produk', ['user' => Auth::user()->id, 'data' => $request]);
-        $request->validate([
+        try {
+            Log::warning('User mencoba menambahkan data produk', ['user' => Auth::user()->id, 'data' => $request]);
+            $request->validate([
                 'code' => 'required',
-                'product_name'=> 'required',
+                'product_name' => 'required',
                 'quantity' => 'required',
                 'price' => 'required'
-        ]);
-        $array = $request->only([
-            'code', 'product_name','quantity', 'price'
-        ]);
-        $products = Product::create($array);
-        Log::info('Berhasil menambah product baru', ['user' => Auth::user()->id, 'product' => $products->id]);
-        return redirect()->route('products.index')->with('success_message', 'Berhasil menambah Produk baru');
-        }catch (\Exception $e) {
-        Log::error('Format yang anda masukkan salah !', ['user' => Auth::user()->id, 'data' => $request]);
-        return redirect()->route('products.create')->with('error_message', 'Format yang anda masukkan salah');
+            ]);
+            $array = $request->only([
+                'code', 'product_name', 'quantity', 'price'
+            ]);
+            $products = Product::create($array);
+            Log::info('Berhasil menambah product baru', ['user' => Auth::user()->id, 'product' => $products->id]);
+            return redirect()->route('products.index')->with('success_message', 'Berhasil menambah Produk baru');
+        } catch (\Exception $e) {
+            Log::error('Format yang anda masukkan salah !', ['user' => Auth::user()->id, 'data' => $request]);
+            return redirect()->route('products.create')->with('error_message', 'Format yang anda masukkan salah');
         }
     }
 
@@ -97,7 +97,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'code' => 'required | min:13 | max:13',
-            'product_name'=> 'required',
+            'product_name' => 'required',
             'quantity' => 'required',
             'price' => 'required'
         ]);
@@ -106,11 +106,11 @@ class ProductController extends Controller
         $product->product_name = $request->product_name;
         $product->quantity = $request->quantity;
         $product->price = $request->price;
-        if($product->save()){
-        Log::info('Berhasil mengubah product', ['user' => Auth::user()->id, 'product' => $product->id]);
-        return redirect()->route('products.index') ->with('success_message', 'Berhasil mengupdate produk ');
+        if ($product->save()) {
+            Log::info('Berhasil mengubah product', ['user' => Auth::user()->id, 'product' => $product->id]);
+            return redirect()->route('products.index')->with('success_message', 'Berhasil mengupdate produk ');
         }
-        Log::error('Data yang diubah tidak sesuai dengan format yang ditentukan', ['user' => Auth::user()->id, 'product' => $products->id, 'data' => $request]);
+        Log::error('Data yang diubah tidak sesuai dengan format yang ditentukan', ['user' => Auth::user()->id, 'product' => $product->id, 'data' => $request]);
         return with('error_message', 'Format Tidak sesuai');
     }
 
@@ -124,14 +124,14 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         //menambahkan code
-        if($product){
-        Log::info('User berhasil menghapus data', ['user' => Auth::user()->id, 'product' => $id]);
-        $product->delete();
-        return redirect()->route('products.index')
-            ->with('success_message', 'Berhasil menghapus produk',['product' => $product]);
+        if ($product) {
+            Log::info('User berhasil menghapus data', ['user' => Auth::user()->id, 'product' => $id]);
+            $product->delete();
+            return redirect()->route('products.index')
+                ->with('success_message', 'Berhasil menghapus produk', ['product' => $product]);
         }
         Log::error('Data tidak tidak ditemukan user untuk dihapus', ['user' => Auth::user()->id, 'product' => $id]);
-        return with('error_message', 'Format Tidak sesuai');//404
+        return with('error_message', 'Format Tidak sesuai'); //404
     }
 
     /**

@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
     "content-hash": "99ea25ccdb2870edc73e4a7e271da4b3",
-=======
-    "content-hash": "f2e80651ff97b68fedceb13d8ff04d43",
->>>>>>> 887ef89af525c712a1a0494b4f2827f696adb27e
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -3766,7 +3762,6 @@
             "time": "2017-05-11T14:25:49+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "spatie/laravel-permission",
             "version": "5.7.0",
             "source": {
@@ -3791,48 +3786,17 @@
                 "orchestra/testbench": "^5.0|^6.0|^7.0",
                 "phpunit/phpunit": "^9.4",
                 "predis/predis": "^1.1"
-=======
-            "name": "spatie/laravel-activitylog",
-            "version": "4.7.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-activitylog.git",
-                "reference": "eee61436e2984119fd71fc338a45ec7d68e3b548"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-activitylog/zipball/eee61436e2984119fd71fc338a45ec7d68e3b548",
-                "reference": "eee61436e2984119fd71fc338a45ec7d68e3b548",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/config": "^8.0 || ^9.0",
-                "illuminate/database": "^8.69 || ^9.27",
-                "illuminate/support": "^8.0 || ^9.0",
-                "php": "^8.0",
-                "spatie/laravel-package-tools": "^1.6.3"
-            },
-            "require-dev": {
-                "ext-json": "*",
-                "orchestra/testbench": "^6.23 || ^7.0",
-                "pestphp/pest": "^1.20"
->>>>>>> 887ef89af525c712a1a0494b4f2827f696adb27e
             },
             "type": "library",
             "extra": {
                 "laravel": {
                     "providers": [
-<<<<<<< HEAD
                         "Spatie\\Permission\\PermissionServiceProvider"
                     ]
                 },
                 "branch-alias": {
                     "dev-main": "5.x-dev",
                     "dev-master": "5.x-dev"
-=======
-                        "Spatie\\Activitylog\\ActivitylogServiceProvider"
-                    ]
->>>>>>> 887ef89af525c712a1a0494b4f2827f696adb27e
                 }
             },
             "autoload": {
@@ -3840,11 +3804,7 @@
                     "src/helpers.php"
                 ],
                 "psr-4": {
-<<<<<<< HEAD
                     "Spatie\\Permission\\": "src"
-=======
-                    "Spatie\\Activitylog\\": "src"
->>>>>>> 887ef89af525c712a1a0494b4f2827f696adb27e
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3857,7 +3817,6 @@
                     "email": "freek@spatie.be",
                     "homepage": "https://spatie.be",
                     "role": "Developer"
-<<<<<<< HEAD
                 }
             ],
             "description": "Permission handling for Laravel 6.0 and up",
@@ -3875,98 +3834,6 @@
             "support": {
                 "issues": "https://github.com/spatie/laravel-permission/issues",
                 "source": "https://github.com/spatie/laravel-permission/tree/5.7.0"
-=======
-                },
-                {
-                    "name": "Sebastian De Deyne",
-                    "email": "sebastian@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Tom Witkowski",
-                    "email": "dev.gummibeer@gmail.com",
-                    "homepage": "https://gummibeer.de",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A very simple activity logger to monitor the users of your website or application",
-            "homepage": "https://github.com/spatie/activitylog",
-            "keywords": [
-                "activity",
-                "laravel",
-                "log",
-                "spatie",
-                "user"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/laravel-activitylog/issues",
-                "source": "https://github.com/spatie/laravel-activitylog/tree/4.7.2"
-            },
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/spatie",
-                    "type": "github"
-                }
-            ],
-            "time": "2022-11-14T12:16:46+00:00"
-        },
-        {
-            "name": "spatie/laravel-package-tools",
-            "version": "1.13.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-package-tools.git",
-                "reference": "4af8e608184471b5568af6265ebb0ca0025c131a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/4af8e608184471b5568af6265ebb0ca0025c131a",
-                "reference": "4af8e608184471b5568af6265ebb0ca0025c131a",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/contracts": "^9.28",
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.5",
-                "orchestra/testbench": "^7.7",
-                "pestphp/pest": "^1.22",
-                "phpunit/phpunit": "^9.5.24",
-                "spatie/pest-plugin-test-time": "^1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\LaravelPackageTools\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Tools for creating Laravel packages",
-            "homepage": "https://github.com/spatie/laravel-package-tools",
-            "keywords": [
-                "laravel-package-tools",
-                "spatie"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/laravel-package-tools/issues",
-                "source": "https://github.com/spatie/laravel-package-tools/tree/1.13.7"
->>>>>>> 887ef89af525c712a1a0494b4f2827f696adb27e
             },
             "funding": [
                 {
@@ -3974,11 +3841,7 @@
                     "type": "github"
                 }
             ],
-<<<<<<< HEAD
             "time": "2022-11-23T07:01:37+00:00"
-=======
-            "time": "2022-11-15T09:10:09+00:00"
->>>>>>> 887ef89af525c712a1a0494b4f2827f696adb27e
         },
         {
             "name": "symfony/console",
