@@ -12,6 +12,7 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="exampleInputName">Kode Produk</label>
+                        <label for="exampleInputName"> [Awali inputan dengan 'M']</label>
                         <input type="text" class="form-control @error('code') is-invalid @enderror" id="exampleInputName" placeholder="Kode Barang" name="code" value="{{old('code')}}">
                         @error('code') <span class="text-danger">{{$message}}</span> @enderror
                     </div>
