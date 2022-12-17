@@ -54,7 +54,7 @@ class UserController extends Controller
         $array = $request->only([
             'name', 'username','email', 'password', 'address'
         ]);
-        // $array['password'] = bcrypt($array['password']);
+        $array['password'] = bcrypt($array['password']);
         $user = User::create($array);
         Log::info('Berhasil menambah user baru', ['user' => Auth::user()->id, 'user' => $user->id]);
         return redirect()->route('users.index');

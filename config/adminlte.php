@@ -310,11 +310,11 @@ return [
             'url'  => '/reportStock',
             'icon'  => 'fa fa-file-pdf',
         ],
-        [
-            'text' => 'Laporan Stock Barang',
-            'url'  => '/reportStock',
-            'icon'  => 'fa fa-file-pdf',
-        ]
+        // [
+        //     'text' => 'Laporan Stock Barang',
+        //     'url'  => '/reportStock',
+        //     'icon'  => 'fa fa-file-pdf',
+        // ]
     ],
 
     /*

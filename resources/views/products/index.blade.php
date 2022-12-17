@@ -9,7 +9,10 @@
             <div class="card">
                 <div class="card-body">
                     <a href="{{route('products.create')}}" class="btn btn-primary mb-2">
-                        Tambah +
+                        Tambah <i class="fas fa-plus"></i>
+                    </a>
+                    <a href="reportStock" class="btn btn-primary mb-2">
+                        Cetak <i class="fas fa-print"></i>
                     </a>
                     <table class="table table-hover table-bordered table-stripped" id="example2">
                         <thead>

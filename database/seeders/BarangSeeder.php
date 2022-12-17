@@ -19,7 +19,7 @@ class BarangSeeder extends Seeder
         $faker = Faker::create('id_ID');
         $faker->addProvider(new \FakerRestaurant\Provider\en_US\Restaurant($faker));
 
-    	for($i = 1; $i <= 2000; $i++){
+    	for($i = 1; $i <= 100; $i++){
 
         \DB::table('products')->insert([
             'code' => IdGenerator::generate(['table' => 'products', 'field'=>'code', 'length' => 8, 'prefix' => 'M']),
