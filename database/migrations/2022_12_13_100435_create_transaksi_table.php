@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('NamaBarang');
             $table->integer('HargaBarang');
             $table->integer('JumlahBarang');
-            $table->date('TanggalPembelian');
             $table->integer('TotalHargaBarang');
             $table->timestamps();
         });

@@ -48,7 +48,7 @@
         <p class="lead text-muted">silahkan pilih menu dibawah ini untuk lanjut</p>
       </div>
       <div class="d-flex align-items-center flex-wrap gap-4 justify-content-center">
-        <a href="#" class="btn btn-success"
+        <a href="{{ route('login') }}" class="btn btn-success"
           style="width: 100%; height: 100%; max-width: 200px; max-height: 200px;">
           <div class="d-flex flex-column align-items-center text-center">
             <i class="bi bi-person-heart" style="font-size: 100px;"></i>

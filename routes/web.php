@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TransaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +41,10 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::get('kirim-email', 'App\Http\Controllers\MailController@enqueue');
+Route::get('transaksi', '\App\Http\Controllers\TransaksiController@index')->name('transaksi.index');
+Route::get('transaksi/create', 'TransaksiController@create')->name('transaksi.create');
+Route::get('transaksi/{transaksi}', '\App\Http\Controllers\TransaksiController@show')->name('transaksi.show');
+Route::post('transaksi', '\App\Http\Controllers\TransaksiController@store')->name('transaksi.store');
+Route::get('transaksi/{transaksi}/edit', '\App\Http\Controllers\TransaksiController@edit')->name('transaksi.edit');
+Route::patch('transaksi/{transaksi}', '\App\Http\Controllers\TransaksiController@update')->name('transaksi.update');
+Route::delete('transaksi/{transaksi}', '\App\Http\Controllers\TransaksiController@destroy')->name('transaksi.destroy');
