@@ -27,13 +27,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', function () {
-  return view('home');
-})->name('home')->middleware('auth');
+Route::group(['middleware' => 'auth'], function () {
+  Route::get('/home', function () {
+    return view('home');
+  })->name('home');
 
-Route::resource('users', \App\Http\Controllers\UserController::class)
-  ->middleware('auth');
-Route::resource('products', \App\Http\Controllers\ProductController::class)
-  ->middleware('auth');
-Route::get('reportStock', [ReportController::class, 'downloadPDF']);
+  Route::resource('users', \App\Http\Controllers\UserController::class)
+    ->middleware(['role:admin']);
+  Route::resource('products', \App\Http\Controllers\ProductController::class)
+    ->middleware(['role:admin,petugas']);
+  Route::get('reportStock', [ReportController::class, 'downloadPDF'])->middleware(['role:admin']);
+});
+
 Route::get('kirim-email', 'App\Http\Controllers\MailController@enqueue');
